@@ -1419,6 +1419,7 @@
 #include "code\datums\sex\actions\other\rub_body.dm"
 #include "code\datums\sex\actions\other\spanking.dm"
 #include "code\datums\sex\actions\other\tongue_bath.dm"
+#include "code\datums\sex\actions\other\wax_play.dm"
 #include "code\datums\sex\actions\sex\_base.dm"
 #include "code\datums\sex\actions\sex\anal.dm"
 #include "code\datums\sex\actions\sex\boobjob.dm"
