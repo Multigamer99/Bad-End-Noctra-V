@@ -13,7 +13,6 @@
 /datum/reagent/consumable/ethanol/beer/emberwine/on_mob_metabolize(mob/living/carbon/human/C)
     ..()
     SEND_SIGNAL(C, COMSIG_SEX_ADJUST_AROUSAL, 5)
-    SEND_SIGNAL(C, COMSIG_SEX_SET_AROUSAL, null)
 
 /datum/reagent/consumable/ethanol/beer/emberwine/on_mob_end_metabolize(mob/living/carbon/human/C)
     ..()

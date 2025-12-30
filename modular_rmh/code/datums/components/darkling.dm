@@ -2,18 +2,18 @@
 	var/current_light_stress = 0
 	var/max_light_stress = 100
 	var/msg_light_warn = 0
-	var	msg_dark_warn = 0
+	var/msg_dark_warn = 0
 
 /datum/component/darkling/Initialize(...)
     . = ..()
     if(!iscarbon(parent))
         return COMPONENT_INCOMPATIBLE
     ADD_TRAIT(parent, TRAIT_DARKLING, TRAIT_GENERIC)
-   	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(update_light_stress))
-    spawn(1)
-        while(parent && !QDELETED(parent))
-            update_light_stress(parent)
-            sleep(1)
+    RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(update_light_stress))
+    START_PROCESSING(SSobj, src)
+
+/datum/component/darkling/process()
+	update_light_stress(parent)
 
 /datum/component/darkling/proc/update_light_stress(var/mob/living/carbon/darkling)
 	if(darkling.eyesclosed || darkling.eye_blind)
@@ -70,4 +70,5 @@
 /datum/component/darkling/Destroy()
 	REMOVE_TRAIT(parent, TRAIT_DARKLING, TRAIT_GENERIC)
 	UnregisterSignal(parent, COMSIG_LIVING_HEALTH_UPDATE)
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
