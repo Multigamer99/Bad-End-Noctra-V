@@ -256,3 +256,7 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 /datum/loadout_item/cowbell
 	name = "Cowbell"
 	item_path = /obj/item/catbell/cow
+//ARMOR
+/datum/loadout_item/bellyriding_harness
+	name = "Bellyriding Harness"
+	item_path = /obj/item/clothing/armor/bellyriding_harness
