@@ -367,6 +367,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define RAGE_TRAIT "rage_trait"
 #define TRAIT_PSYDONIAN_GRIT "Psydonian Grit" // Pain Tolerance. Through faith, ENDURE.
 #define TRAIT_PSYDONITE "Psydonite's Devotion" // Anti-Miracles on a selective basis, anastasis / cure rot still apply. Slow passive wound healing while you have blood.
+#define TRAIT_RITUALIST "Ritualist" // Allows use of ritual chalk
+#define TRAIT_DREAMWALKER "Dreamwalker" // Walks dream and reality at the same time
 #define TRAIT_BLACKBAGGER "Apprehension Techniques" // Capable of using Garrotes and Blackbags. Apprehension techniques.
 #define TRAIT_LYCANRESILENCE "Werewolf Resilence"
 #define TRAIT_WOUNDREGEN "Wound Regeneration"
@@ -387,6 +389,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HATEWOMEN				"Ladykiller"
 #define TRAIT_SEEDKNOW 				"Seed Knower"
 #define TRAIT_NOBLE					"Noble Blooded"
+#define TRAIT_DEFILED_NOBLE			"Drained Noble Blood"
+#define TRAIT_DEATHBARGAIN			"Death Bargain"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
 #define TRAIT_BLINDFIGHTING 			"Sixth-Sense"
