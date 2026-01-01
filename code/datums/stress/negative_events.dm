@@ -361,6 +361,11 @@
 	desc = span_boldred("No... I want to go back...")
 	timer = 999 MINUTES
 
+/datum/stress_event/necrarevive
+	timer = 15 MINUTES
+	stress_change = 15
+	desc = span_boldred("SO CLOSE TO BEING GRASPED, SO COLD!")
+
 /datum/stress_event/guillotinefail
 	timer = 5 MINUTES
 	stress_change = 3

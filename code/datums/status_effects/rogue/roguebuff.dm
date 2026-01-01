@@ -254,6 +254,56 @@
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stress_event/calm)
 
+/atom/movable/screen/alert/status_effect/buff/zizos_vow
+	name = "Vow to Zizo"
+	desc = "I have pledged myself to Zizo. Progress at any cost."
+	icon_state = "buff"
+
+#define ZIZOVOW_FILTER "zizovow_glow"
+
+/datum/status_effect/buff/zizos_vow
+	id = "zizovow"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/zizos_vow
+	effectedstats = list(STATKEY_CON = 2)
+	duration = -1
+	var/outline_colour = "#7a1e1e"
+
+/datum/status_effect/buff/zizos_vow/on_apply()
+	. = ..()
+	var/filter = owner.get_filter(ZIZOVOW_FILTER)
+	if (!filter)
+		owner.add_filter(ZIZOVOW_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 200, "size" = 1))
+	return TRUE
+
+/datum/status_effect/buff/zizos_vow/on_remove()
+	. = ..()
+	owner.remove_filter(ZIZOVOW_FILTER)
+
+#undef ZIZOVOW_FILTER
+
+/datum/status_effect/buff/healing/zizos_vow
+	id = "healing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/healing
+	duration = -1
+	healing_on_tick = 3
+	outline_colour = "#7a1e1e"
+
+/datum/status_effect/buff/healing/zizos_vow/tick()
+	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal_rogue(get_turf(owner))
+	H.color = "#7a1e1e"
+	var/list/wCount = owner.get_wounds()
+	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume + (healing_on_tick + 5), BLOOD_VOLUME_NORMAL)
+	if(length(wCount))
+		owner.heal_wounds(healing_on_tick)
+		owner.update_damage_overlays()
+	owner.adjustBruteLoss(-healing_on_tick, 0)
+	owner.adjustFireLoss(-healing_on_tick, 0)
+	owner.adjustOxyLoss(-healing_on_tick, 0)
+	owner.adjustToxLoss(-healing_on_tick, 0)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
+	owner.adjustCloneLoss(-healing_on_tick, 0)
+
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
@@ -979,3 +1029,321 @@
 /atom/movable/screen/alert/status_effect/buff/free_feet
 	name = "Foot Freedom"
 	desc = "Not wearing shoes allows me to move more freely."
+
+#define BLESSINGOFSUN_FILTER "sun_glow"
+
+/atom/movable/screen/alert/status_effect/buff/guidinglight
+	name = "Guiding Light"
+	desc = "Astrata's gaze follows me, lighting the path!"
+	icon_state = "stressvg"
+
+/datum/status_effect/buff/guidinglight
+	id = "guidinglight"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/guidinglight
+	duration = 30 MINUTES
+	status_type = STATUS_EFFECT_REFRESH
+	effectedstats = list(STATKEY_PER = 2)
+	examine_text = "SUBJECTPRONOUN walks with Her Light!"
+	var/obj/effect/dummy/lighting_obj/moblight/mob_light_obj
+	var/outline_colour = "#ffffff"
+
+/datum/status_effect/buff/guidinglight/on_apply()
+	. = ..()
+	if(!.)
+		return
+	to_chat(owner, span_notice("Light blossoms into being around me!"))
+	var/filter = owner.get_filter(BLESSINGOFSUN_FILTER)
+	if(!filter)
+		owner.add_filter(BLESSINGOFSUN_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 60, "size" = 1))
+	mob_light_obj = owner.mob_light("#fdfbd3", 10, 10)
+	return TRUE
+
+/datum/status_effect/buff/guidinglight/on_remove()
+	. = ..()
+	playsound(owner, 'sound/items/firesnuff.ogg', 75, FALSE)
+	to_chat(owner, span_notice("The miraculous light surrounding me has fled..."))
+	owner.remove_filter(BLESSINGOFSUN_FILTER)
+	QDEL_NULL(mob_light_obj)
+
+#undef BLESSINGOFSUN_FILTER
+
+/datum/status_effect/buff/moonlightdance
+	id = "moonlightdance"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/moonlightdance
+	effectedstats = list(STATKEY_INT = 2)
+	duration = 25 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/moonlightdance
+	name = "Moonlight Dance"
+	desc = "Noc's stony touch lay upon my mind, bringing me wisdom."
+	icon_state = "moonlightdance"
+
+/datum/status_effect/buff/moonlightdance/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("I see through the moonlight. Silvery threads dance in my vision."))
+	ADD_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+
+/datum/status_effect/buff/moonlightdance/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("Noc's silver leaves my sight."))
+	REMOVE_TRAIT(owner, TRAIT_DARKVISION, MAGIC_TRAIT)
+
+/atom/movable/screen/alert/status_effect/buff/flylordstriage
+	name = "Flylord's Triage"
+	desc = "Pestra's servants crawl through my pores and wounds!"
+	icon_state = "buff"
+
+/datum/status_effect/buff/flylordstriage
+	id = "healing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/healing
+	duration = 20 SECONDS
+	var/healing_on_tick = 40
+
+/datum/status_effect/buff/flylordstriage/tick()
+	playsound(owner, 'sound/misc/fliesloop.ogg', 100, FALSE, -1)
+	owner.flash_fullscreen("redflash3")
+	owner.emote("agony")
+	new /obj/effect/temp_visual/flies(get_turf(owner))
+	var/list/wCount = owner.get_wounds()
+	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume + 100, BLOOD_VOLUME_NORMAL)
+	if(wCount.len > 0)
+		owner.heal_wounds(healing_on_tick)
+		owner.update_damage_overlays()
+	owner.adjustBruteLoss(-healing_on_tick, 0)
+	owner.adjustFireLoss(-healing_on_tick, 0)
+	owner.adjustOxyLoss(-healing_on_tick, 0)
+	owner.adjustToxLoss(-healing_on_tick, 0)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
+	owner.adjustCloneLoss(-healing_on_tick, 0)
+
+/obj/effect/temp_visual/flies
+	name = "Flylord's triage"
+	icon_state = "flies"
+	duration = 15
+	plane = GAME_PLANE_UPPER
+	layer = ABOVE_ALL_MOB_LAYER
+	icon = 'icons/roguetown/mob/rotten.dmi'
+	icon_state = "rotten"
+
+/datum/status_effect/buff/flylordstriage/on_remove()
+	. = ..()
+	to_chat(owner, span_userdanger("It's finally over..."))
+
+/atom/movable/screen/alert/status_effect/buff/undermaidenbargain
+	name = "Undermaiden's Bargain"
+	desc = "A horrible deal was struck in my name..."
+	icon_state = "buff"
+
+/datum/status_effect/buff/undermaidenbargain
+	id = "undermaidenbargain"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/undermaidenbargain
+	duration = 30 MINUTES
+
+/datum/status_effect/buff/undermaidenbargain/on_apply()
+	. = ..()
+	to_chat(owner, span_danger("You feel as though some horrible deal has been prepared in your name. May you never see it fulfilled..."))
+	playsound(owner, 'sound/misc/bell.ogg', 100, FALSE, -1)
+	ADD_TRAIT(owner, TRAIT_DEATHBARGAIN, id)
+
+/datum/status_effect/buff/undermaidenbargain/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_DEATHBARGAIN, id)
+
+/datum/status_effect/buff/undermaidenbargainheal/on_apply()
+	. = ..()
+	owner.remove_status_effect(/datum/status_effect/buff/undermaidenbargain)
+	to_chat(owner, span_warning("You feel the deal struck in your name is being fulfilled..."))
+	playsound(owner, 'sound/misc/deadbell.ogg', 100, FALSE, -1)
+	ADD_TRAIT(owner, TRAIT_NODEATH, id)
+	var/dirgeline = rand(1, 6)
+	spawn(15)
+		switch(dirgeline)
+			if(1)
+				to_chat(owner, span_cultsmall("She watches the city skyline as her crimson pours into the drain."))
+			if(2)
+				to_chat(owner, span_cultsmall("He only wanted more for his family. He feels comfort on the pavement, the Watchman's blade having met its mark."))
+			if(3)
+				to_chat(owner, span_cultsmall("A sailor's leg is caught in naval rope. Their last thoughts are of home."))
+			if(4)
+				to_chat(owner, span_cultsmall("She sobbed over the Venardine's corpse. The Brigand's mace stemmed her tears."))
+			if(5)
+				to_chat(owner, span_cultsmall("A farm son chokes up his last. At his bedside, a sister and mother weep."))
+			if(6)
+				to_chat(owner, span_cultsmall("A woman begs at a Headstone. It is your fault."))
+
+/datum/status_effect/buff/undermaidenbargainheal/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("The bargain struck in my name has been fulfilled... I am thrown from Necra's embrace, another in my place..."))
+	playsound(owner, 'sound/misc/deadbell.ogg', 100, FALSE, -1)
+	REMOVE_TRAIT(owner, TRAIT_NODEATH, id)
+
+/datum/status_effect/buff/undermaidenbargainheal
+	id = "undermaidenbargainheal"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/undermaidenbargainheal
+	duration = 10 SECONDS
+	var/healing_on_tick = 20
+
+/datum/status_effect/buff/undermaidenbargainheal/tick()
+	var/list/wCount = owner.get_wounds()
+	if(owner.blood_volume < BLOOD_VOLUME_NORMAL)
+		owner.blood_volume = min(owner.blood_volume + 60, BLOOD_VOLUME_NORMAL)
+	if(wCount.len > 0)
+		owner.heal_wounds(100)
+		owner.update_damage_overlays()
+	owner.adjustBruteLoss(-healing_on_tick, 0)
+	owner.adjustFireLoss(-healing_on_tick, 0)
+	owner.adjustOxyLoss(-healing_on_tick, 0)
+	owner.adjustToxLoss(-healing_on_tick, 0)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
+	owner.adjustCloneLoss(-healing_on_tick, 0)
+
+/atom/movable/screen/alert/status_effect/buff/undermaidenbargainheal
+	name = "The Fulfillment"
+	desc = "My bargain is being fulfilled..."
+	icon_state = "buff"
+
+/atom/movable/screen/alert/status_effect/buff/lesserwolf
+	name = "Blessing of the Lesser Wolf"
+	desc = "I swell with the embuement of a predator..."
+	icon_state = "buff"
+
+/datum/status_effect/buff/lesserwolf
+	id = "lesserwolf"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/lesserwolf
+	duration = 30 MINUTES
+
+/datum/status_effect/buff/lesserwolf/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("I feel my leg muscles grow taut, my teeth sharp. Branches and brush reach out for my soul..."))
+	ADD_TRAIT(owner, TRAIT_LONGSTRIDER, id)
+	ADD_TRAIT(owner, TRAIT_STRONGBITE, id)
+
+/datum/status_effect/buff/lesserwolf/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("I feel Dendor's blessing leave my body..."))
+	REMOVE_TRAIT(owner, TRAIT_LONGSTRIDER, id)
+	REMOVE_TRAIT(owner, TRAIT_STRONGBITE, id)
+
+/atom/movable/screen/alert/status_effect/buff/pacify
+	name = "Blessing of Eora"
+	desc = "I feel my heart as light as feathers. All my worries have washed away."
+	icon_state = "buff"
+
+/datum/status_effect/buff/pacify
+	id = "pacify"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/pacify
+	duration = 30 MINUTES
+
+/datum/status_effect/buff/pacify/on_apply()
+	. = ..()
+	to_chat(owner, span_green("Everything feels great!"))
+	owner.add_stress(/datum/stress_event/calm)
+	ADD_TRAIT(owner, TRAIT_PACIFISM, id)
+	playsound(owner, 'sound/misc/peacefulwake.ogg', 100, FALSE, -1)
+
+/datum/status_effect/buff/pacify/on_remove()
+	. = ..()
+	to_chat(owner, span_warning("My mind is my own again, no longer awash with foggy peace!"))
+	REMOVE_TRAIT(owner, TRAIT_PACIFISM, id)
+
+/datum/status_effect/buff/ravox_vow
+	id = "ravox_vow"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/ravox_vow
+	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 1)
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = -1
+	tick_interval = 1 SECONDS
+
+/datum/status_effect/buff/ravox_vow/tick()
+	owner.heal_wounds(1)
+
+/datum/status_effect/buff/ravox_vow/on_apply()
+	. = ..()
+	RegisterSignal(owner, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, PROC_REF(on_unarmed_attack))
+	RegisterSignal(owner, COMSIG_MOB_ITEM_ATTACK, PROC_REF(on_item_attack))
+
+/datum/status_effect/buff/ravox_vow/proc/on_unarmed_attack(mob/living/user, atom/target, proximity)
+	SIGNAL_HANDLER
+	if(!proximity)
+		return
+	var/mob/living/carbon/human/H = target
+	if(!istype(H))
+		return
+	if(!(H.real_name in GLOB.outlawed_players))
+		return
+	if(!user.mind || !user.mind.known_people || !(H.real_name in user.mind.known_people))
+		return
+	var/armor_block = H.run_armor_check(user.zone_selected, "blunt")
+	if(prob(armor_block))
+		return
+	apply_effects(H)
+
+/datum/status_effect/buff/ravox_vow/proc/on_item_attack(mob/living/user, mob/living/target, obj/item/item)
+	SIGNAL_HANDLER
+	var/mob/living/carbon/human/H = target
+	if(!istype(H))
+		return
+	if(!(H.real_name in GLOB.outlawed_players))
+		return
+	if(!user.mind || !user.mind.known_people || !(H.real_name in user.mind.known_people))
+		return
+	var/armor_block = H.run_armor_check(user.zone_selected, item.damage_type)
+	if(prob(armor_block))
+		return
+	apply_effects(H)
+
+/datum/status_effect/buff/ravox_vow/proc/apply_effects(mob/living/carbon/human/target)
+	if(target.fire_stacks >= 3)
+		return
+	target.adjust_fire_stacks(1)
+	INVOKE_ASYNC(target, TYPE_PROC_REF(/mob/living, IgniteMob))
+
+/datum/status_effect/buff/ravox_vow/on_remove()
+	. = ..()
+	UnregisterSignal(owner, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_HUMAN_MELEE_UNARMED_ATTACK))
+
+/atom/movable/screen/alert/status_effect/buff/ravox_vow
+	name = "Ravox Vow"
+	desc = "I vowed to Ravox. I shall bring justice to Psydonia."
+
+#define JOYBRINGER_FILTER "joybringer"
+
+/datum/status_effect/joybringer
+	id = "joybringer"
+	var/outline_colour = "#a529e8"
+	duration = -1
+	tick_interval = 1 SECONDS
+	examine_text = span_love("SUBJECTPRONOUN is bathed in Baotha's blessings!")
+	alert_type = null
+	var/mutable_appearance/joybringer_overlay
+
+/datum/status_effect/joybringer/on_apply()
+	. = ..()
+	owner.visible_message(span_userdanger("A tide of vibrant purple mist surges from [owner], carrying the heavy scent of sweet intoxication!"))
+	var/filter = owner.get_filter(JOYBRINGER_FILTER)
+	if(!filter)
+		owner.add_filter(JOYBRINGER_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 60, "size" = 2))
+	joybringer_overlay = mutable_appearance('icons/effects/effects.dmi', "mist", alpha = 128)
+	joybringer_overlay.appearance_flags = RESET_COLOR
+	joybringer_overlay.blend_mode = BLEND_ADD
+	joybringer_overlay.color = "#a529e8"
+	joybringer_overlay.layer = ABOVE_MOB_LAYER
+	owner.add_overlay(joybringer_overlay)
+
+/datum/status_effect/joybringer/on_remove()
+	. = ..()
+	owner.remove_filter(JOYBRINGER_FILTER)
+	if(joybringer_overlay)
+		owner.cut_overlay(joybringer_overlay)
+	joybringer_overlay = null
+
+/datum/status_effect/joybringer/tick()
+	for(var/mob/living/mob in get_hearers_in_view(2, owner))
+		if(mob == owner)
+			continue
+		if(HAS_TRAIT(mob, TRAIT_CRACKHEAD) || HAS_TRAIT(mob, TRAIT_PSYDONITE))
+			continue
+		mob.apply_status_effect(/datum/status_effect/debuff/joybringer_druqks)
+
+#undef JOYBRINGER_FILTER

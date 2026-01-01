@@ -197,6 +197,17 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt4
 	duration = 100
 
+/datum/status_effect/debuff/dreamfiend_curse
+	id = "dreamfiend_curse"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/dreamfiend_curse
+	effectedstats = list(STATKEY_INT = -2, STATKEY_LCK = -2, STATKEY_PER = -2, STATKEY_SPD = -1)
+	duration = 30 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/dreamfiend_curse
+	name = "Abyssal Curse"
+	desc = "A nightmare presence clings to my thoughts and saps my clarity."
+	icon_state = "stressvg"
+
 
 //Used only when starvation damage is enabled
 /atom/movable/screen/alert/status_effect/debuff/thirstyt4
@@ -613,3 +624,86 @@
 	name = "Electrified"
 	desc = "Your body is charged with unstable electricity!"
 	icon_state = "dazed"
+
+/datum/status_effect/debuff/devitalised
+	id = "devitalised"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/devitalised
+	effectedstats = list(STATKEY_STR = -1, STATKEY_CON = -1, STATKEY_END = -1, STATKEY_SPD = -1, STATKEY_LCK = -1)
+	duration = 15 MINUTES
+
+/datum/status_effect/debuff/devitalised/lesser
+	effectedstats = list(STATKEY_STR = -1, STATKEY_CON = -1, STATKEY_END = -1, STATKEY_SPD = -1, STATKEY_LCK = -1)
+	duration = 5 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/devitalised
+	name = "Devitalised"
+	desc = "Something has been taken from me, and it will take time to recover."
+
+/datum/status_effect/debuff/ritualdefiled
+	id = "ritualdefiled"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/ritualdefiled
+	effectedstats = list(STATKEY_STR = -1, STATKEY_CON = -1, STATKEY_END = -1, STATKEY_SPD = -1, STATKEY_LCK = -1)
+	duration = 1 HOURS
+
+/atom/movable/screen/alert/status_effect/debuff/ritualdefiled
+	name = "Tainted Lux"
+	desc = "My Lux has been tainted in a vile heretic ritual."
+
+/datum/status_effect/debuff/ritesexpended
+	id = "ritesexpended"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/ritesexpended
+	duration = 30 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/ritesexpended
+	name = "Rites Complete"
+	desc = "It will take time before I can next perform a rite."
+	icon_state = "ritesexpended"
+
+/datum/status_effect/debuff/ritesexpended_heavy
+	id = "ritesexpended_heavy"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/ritesexpended_heavy
+	duration = 1 HOURS
+
+/atom/movable/screen/alert/status_effect/debuff/ritesexpended_heavy
+	name = "Rites Complete"
+	desc = "It will take a lot of time before I can perform a next rite. I am drained."
+	icon_state = "ritesexpended"
+
+/datum/status_effect/debuff/rotted_zombie
+	id = "rotted_zombie"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/rotted_zombie
+	effectedstats = list(STATKEY_CON = -8)
+
+/atom/movable/screen/alert/status_effect/debuff/rotted_zombie
+	name = "Decomposing Corpse"
+	desc = "You've been dead for some time... your body is finally starting to give out on you."
+	icon_state = "rotted_body"
+
+/datum/status_effect/debuff/joybringer_druqks
+	id = "joybringer_druqks"
+	effectedstats = list(STATKEY_LCK = -2)
+	duration = 3 SECONDS
+	alert_type = null
+
+/datum/status_effect/debuff/joybringer_druqks/on_apply()
+	. = ..()
+	owner.overlay_fullscreen("joybringer_weeds", /atom/movable/screen/fullscreen/weedsm)
+	owner.overlay_fullscreen("joybringer_druqks", /atom/movable/screen/fullscreen/druqks)
+	ADD_TRAIT(owner, TRAIT_DRUQK, src)
+	if(owner.client)
+		owner.refresh_looping_ambience()
+
+/datum/status_effect/debuff/joybringer_druqks/on_remove()
+	. = ..()
+	owner.clear_fullscreen("joybringer_druqks")
+	owner.clear_fullscreen("joybringer_weeds")
+	REMOVE_TRAIT(owner, TRAIT_DRUQK, src)
+	if(owner.client)
+		owner.refresh_looping_ambience()
+
+/datum/status_effect/debuff/joybringer_druqks/tick()
+	handle_maniac_hallucinations(owner, 1)
+	owner.Jitter(1)
+	if(!prob(10))
+		return
+	owner.emote(pick("chuckle", "giggle"))

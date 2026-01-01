@@ -26,6 +26,10 @@
 		STATKEY_PER = -1
 	)
 
+	traits = list(
+		TRAIT_RITUALIST,
+	)
+
 	skills = list(
 		/datum/skill/misc/sewing = 2,
 		/datum/skill/misc/medicine = 3,
@@ -140,7 +144,8 @@
 	beltl = /obj/item/key/church
 	backl = /obj/item/weapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(
-		/obj/item/needle = 1
+		/obj/item/needle = 1,
+		/obj/item/ritechalk = 1
 	)
 
 /datum/outfit/monk/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)

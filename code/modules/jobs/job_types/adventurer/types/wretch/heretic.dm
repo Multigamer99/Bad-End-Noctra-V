@@ -30,7 +30,8 @@
 		TRAIT_STEELHEARTED,
 		TRAIT_HEAVYARMOR,
 		TRAIT_FANATICAL,
-		TRAIT_INHUMENCAMP
+		TRAIT_INHUMENCAMP,
+		TRAIT_RITUALIST
 	)
 
 /datum/job/advclass/wretch/heretic/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -127,6 +128,7 @@
 		/obj/item/storage/belt/pouch/coins/poor = 1,
 		/obj/item/rope/chain = 1,
 		/obj/item/reagent_containers/glass/bottle/stronghealthpot = 1,
+		/obj/item/ritechalk = 1
 	)
 	belt = /obj/item/storage/belt/leather/black
 	ring = /obj/item/clothing/ring/silver

@@ -850,7 +850,7 @@
 		if(T.density && !include_dense)
 			continue
 		var/area/A = get_area(T)
-		if(A && A.noteleport && !include_teleport_restricted)
+		if(A && (A.area_flags & NO_TELEPORT) && !include_teleport_restricted)
 			continue
 		if(T.x > world.maxx - outer_tele_radius || T.x < outer_tele_radius)
 			continue
@@ -1081,6 +1081,10 @@
 		loc.visible_message(span_warning("[target] sways like windchimes in the wind..."))
 		target.visible_message(span_green("I feel the burdens of my heart lifting. Something feels very wrong... I don't mind at all..."))
 		target.apply_status_effect(/datum/status_effect/buff/pacify)
+
+/obj/structure/ritualcircle/undivided
+	name = "Rune of Deca Divinity"
+	desc = "A Holy Rune of The Undivided Pantheon."
 
 /obj/structure/ritualcircle/ravox
 	desc = "A Holy Rune of Ravox. A blade to protect the weak with."

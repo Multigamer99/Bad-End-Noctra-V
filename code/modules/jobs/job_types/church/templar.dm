@@ -7,8 +7,8 @@
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_TEMPLAR
 	faction = FACTION_TOWN
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	bypass_lastclass = TRUE
 
 	allowed_races = RACES_TEMPLAR
@@ -49,7 +49,8 @@
 	traits = list(
 		TRAIT_HEAVYARMOR,
 		TRAIT_STEELHEARTED,
-		TRAIT_KNOWBANDITS
+		TRAIT_KNOWBANDITS,
+		TRAIT_RITUALIST
 	)
 
 	languages = list(/datum/language/celestial)
@@ -136,7 +137,7 @@
 	pants = /obj/item/clothing/pants/chainlegs
 	shoes = /obj/item/clothing/shoes/boots/armor/light
 	backl = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/keyring/priest = 1,  /obj/item/storage/belt/pouch/coins/poor = 1)
+	backpack_contents = list(/obj/item/storage/keyring/priest = 1,  /obj/item/storage/belt/pouch/coins/poor = 1, /obj/item/ritechalk = 1)
 	belt = /obj/item/storage/belt/leather/black
 	ring = /obj/item/clothing/ring/silver
 	gloves = /obj/item/clothing/gloves/chain
