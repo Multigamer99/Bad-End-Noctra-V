@@ -1,1 +1,4 @@
-necbromancer role=Host
+necbromancer = Host
+necBROmancer = Host
+necbromancer = host
+necBROmancer = host
