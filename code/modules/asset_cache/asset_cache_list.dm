@@ -36,6 +36,7 @@
 	legacy = TRUE
 	assets = list(
 		"PixelifySans-VariableFont_wght.ttf" = 'interface/fonts/PixelifySans-VariableFont_wght.ttf',
+		"pterra.ttf" = 'interface/fonts/pterra.ttf',
 		"Mookmania.otf" = 'interface/fonts/Mookmania.otf',
 		//"Mookmania.otf" = 'interface/fonts/Mookmania.otf',
 		"chiseld.ttf" = 'interface/fonts/chiseld.ttf',
