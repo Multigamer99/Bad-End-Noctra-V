@@ -124,7 +124,7 @@
 		if(water_top_overlay)
 			QDEL_NULL(water_top_overlay)
 		make_unshiny()
-		var/mutable_appearance/dirty = mutable_appearance('icons/turf/natural/liquids.dmi', "rock")
+		var/mutable_appearance/dirty = mutable_appearance('icons/turf/floors.dmi', "rock")
 		add_overlay(dirty)
 		for(var/obj/structure/waterwheel/rotator in contents)
 			rotator.set_rotational_direction_and_speed(null, 0)
@@ -522,7 +522,7 @@
 /turf/open/water/bath
 	name = "water"
 	desc = "Faintly yellow colored. Suspicious."
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("bathtile", "bathtileW")
 	water_level = 2
 	slowdown = 15
@@ -532,7 +532,7 @@
 /turf/open/water/sewer
 	name = "sewage"
 	desc = "This dark water smells of dead rats."
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("paving", "pavingW")
 	water_level = 1
 	slowdown = 1
@@ -578,7 +578,7 @@
 /turf/open/water/swamp
 	name = "murk"
 	desc = "Weeds and algae cover the surface of the water."
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("dirt", "dirtW2")
 	water_level = 2
 	slowdown = 20
@@ -653,7 +653,7 @@
 /turf/open/water/marsh
 	name = "marshwater"
 	desc = "A heavy layer of weeds and algae cover the surface of the water."
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("dirt", "dirtW3")
 	water_level = 2
 	slowdown = 15
@@ -668,6 +668,7 @@
 /turf/open/water/marsh/deep
 	name = "marshwater"
 	desc = "A heavy layer of weeds and algae cover the surface of the deep water."
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("dirt", "dirtW4")
 	water_level = 3
 	slowdown = 20
@@ -676,7 +677,7 @@
 /turf/open/water/cleanshallow
 	name = "water"
 	desc = "Clear and shallow water, what a blessing!"
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("rock", "rockw2")
 	water_level = 2
 	slowdown = 15
@@ -700,7 +701,7 @@
 /turf/open/water/blood
 	name = "blood"
 	desc = "A pool of sanguine liquid."
-	icon = 'icons/turf/natural/liquids.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = MAP_SWITCH("rock", "rockb")
 	water_level = 2
 	slowdown = 15
@@ -714,7 +715,7 @@
 /turf/open/water/river
 	name = "water"
 	desc = "Crystal clear water! Flowing swiftly along the river."
-	icon_state = MAP_SWITCH("rock", "rivermove-dir")
+	icon_state = MAP_SWITCH("rocky", "rivermove-dir")
 	water_level = 3
 	slowdown = 20
 	swim_skill = TRUE
@@ -775,12 +776,12 @@
 				A.ConveyorMove(dir)
 
 /turf/open/water/river/dirt
-	icon_state = MAP_SWITCH("dirt", "rivermovealt-dir")
+	icon_state = MAP_SWITCH("dirty", "rivermovealt-dir")
 	water_reagent = /datum/reagent/water/gross
 	cleanliness_factor = -5
 
 /turf/open/water/river/blood
-	icon_state = MAP_SWITCH("rock", "rivermovealt2-dir")
+	icon_state = MAP_SWITCH("rocky", "rivermovealt2-dir")
 	water_reagent = /datum/reagent/blood
 	cleanliness_factor = -5
 
@@ -797,9 +798,9 @@
 /turf/open/water/ocean
 	name = "salt water"
 	desc = "The waves lap at the coast, hungry to swallow the land. Doesn't look too deep."
-	icon_state = MAP_SWITCH("gravel", "gravelW")
-	icon = 'icons/turf/natural/liquids.dmi'
-	neighborlay_self = "edgesalt"
+	icon_state = "water"
+	icon = 'icons/turf/floors.dmi'
+	neighborlay_self = null
 	water_level = 2
 	slowdown = 2
 	swim_skill = TRUE
@@ -810,8 +811,8 @@
 /turf/open/water/ocean/deep
 	name = "salt water"
 	desc = "Deceptively deep, be careful not to find yourself this far out."
-	icon = 'icons/turf/natural/liquids.dmi'
-	icon_state = MAP_SWITCH("ash", "ashW")
+	icon_state = "ash"
+	icon = 'icons/turf/floors.dmi'
 	water_level = 3
 	slowdown = 4
 	swim_skill = TRUE

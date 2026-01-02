@@ -1,4 +1,8 @@
 /datum/preferences/proc/validate_descriptors()
+	if(!islist(descriptor_entries))
+		descriptor_entries = list()
+	if(!islist(custom_descriptors))
+		custom_descriptors = list()
 	for(var/choice_type in pref_species.descriptor_choices)
 		var/datum/descriptor_choice/choice = DESCRIPTOR_CHOICE(choice_type)
 		var/datum/descriptor_entry/entry = get_descriptor_entry_for_choice(choice_type)
@@ -11,13 +15,19 @@
 			entry.set_values(choice_type, pick(choice.descriptors))
 		descriptor_entries += entry
 
+	var/list/entries_to_remove = list()
 	for(var/datum/descriptor_entry/entry as anything in descriptor_entries)
 		var/datum/descriptor_choice/choice = DESCRIPTOR_CHOICE(entry.descriptor_choice_type)
+		if(!choice)
+			entries_to_remove += entry
+			continue
 		if(entry.descriptor_type == null || !(entry.descriptor_type in choice.descriptors))
 			if(choice.default_descriptor)
 				entry.descriptor_type = choice.default_descriptor
 			else
 				entry.descriptor_type = pick(choice.descriptors)
+	if(length(entries_to_remove))
+		descriptor_entries -= entries_to_remove
 	for(var/i in 1 to CUSTOM_DESCRIPTOR_AMOUNT)
 		if(length(custom_descriptors) >= i)
 			continue
@@ -87,10 +97,14 @@
 	var/list/dat = list()
 	for(var/choice_type in pref_species.descriptor_choices)
 		var/datum/descriptor_choice/choice = DESCRIPTOR_CHOICE(choice_type)
+		if(!choice)
+			continue
 		var/datum/descriptor_entry/entry = get_descriptor_entry_for_choice(choice_type)
 		if(!entry)
 			continue
 		var/datum/mob_descriptor/descriptor = MOB_DESCRIPTOR(entry.descriptor_type)
+		if(!descriptor)
+			continue
 		dat += "<b>[choice.name]:</b> <a href='byond://?_src_=prefs;descriptor_choice=[choice_type];preference=choose_descriptor;task=change_descriptor'>[descriptor.name]</a><br>"
 
 	for(var/i in 1 to CUSTOM_DESCRIPTOR_AMOUNT)
@@ -118,6 +132,7 @@
 	return dat
 
 /datum/preferences/proc/show_descriptors_ui(mob/user)
+	validate_descriptors()
 	var/list/dat = list()
 	dat += print_descriptors_page()
 	var/datum/browser/popup = new(user, "descriptors_customization", "<div align='center'>Describe myself</div>", 350, 510)
