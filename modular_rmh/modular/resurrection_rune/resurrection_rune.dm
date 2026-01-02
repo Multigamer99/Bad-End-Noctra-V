@@ -39,6 +39,8 @@
 				linked_users -= body_mind_link[mind_user]
 				break
 		if(!mind_user.current && !(mind_user in resurrecting))
+			if(!can_rune_revive(mind_user))
+				continue
 			to_chat(mind_user.get_ghost(TRUE, TRUE), span_blue("Somewhere, you are being remade anew..."))
 			resurrecting |= mind_user
 			addtimer(CALLBACK(src, PROC_REF(spawn_new_body), mind_user), 5 SECONDS)
@@ -52,13 +54,23 @@
 					var/turf/tur = get_turf(H)
 					if(unlinked.maxHealth - unlinked.health >= RUNE_DAMAGE_THRESHOLD || unlinked.is_dead() || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
 						if(!(unlinked in resurrecting))
+							if(!can_rune_revive(unlinked.mind))
+								continue
 							resurrecting |= unlinked
 							to_chat(unlinked.mind.get_ghost(TRUE, TRUE), span_blue("An alien force suddenly <b>YANKS</b> you back to life!"))
 							addtimer(CALLBACK(src, PROC_REF(start_revival), unlinked, FALSE), 1 SECONDS)
 
+/datum/resurrection_rune_controller/proc/can_rune_revive(datum/mind/mind)
+	if(!mind)
+		return FALSE
+	return !mind.rune_revive_used
+
 
 /datum/resurrection_rune_controller/proc/spawn_new_body(datum/mind/mind)
 	linked_users -= body_mind_link[mind]
+	if(!can_rune_revive(mind))
+		resurrecting -= mind
+		return
 	var/turf/T = get_turf(sub_rune)
 	var/mob/living/body = new mob_type(T)
 	var/mob/ghostie = mind.get_ghost(TRUE)
@@ -67,6 +79,7 @@
 	mind.current = body //little hack
 	mind.transfer_to(body)
 	mind.grab_ghost(TRUE)
+	mind.rune_revive_used = TRUE
 	body.flash_act()
 	resurrecting -= mind
 	linked_users += body
@@ -112,6 +125,8 @@
 
 	if(!(target in linked_users)) //sanity check
 		return
+	if(!can_rune_revive(target.mind))
+		return
 
 	var/turf/tur = get_turf(target)
 	if(target.maxHealth - target.health >= RUNE_DAMAGE_THRESHOLD || target.is_dead() || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
@@ -121,6 +136,9 @@
 	return
 
 /datum/resurrection_rune_controller/proc/start_revival(mob/living/carbon/user, is_linked = TRUE)
+	if(!can_rune_revive(user?.mind))
+		resurrecting -= user
+		return
 	if(is_linked)
 		to_chat(user.mind, span_blue("You feel a faint force tuggung you back to life..."))
 	else
@@ -142,10 +160,15 @@
 		sub_rune.visible_message(span_blue("The rune flickers, connection to a body suddenly severed."))
 		resurrecting -= user
 		return
+	var/datum/mind/mind = body.mind
+	if(!can_rune_revive(mind))
+		resurrecting -= user
+		return
 	body.visible_message(span_blue("With a loud pop, [body.name] suddenly disappears!"))
 	playsound(get_turf(body), 'sound/magic/repulse.ogg', 100, FALSE, -1)
 	body.forceMove(T)
 	body.revive(full_heal = TRUE, admin_revive = TRUE)
+	mind.rune_revive_used = TRUE
 
 	var/was_zombie = body.mind?.has_antag_datum(/datum/antagonist/zombie)
 	var/has_rot = FALSE

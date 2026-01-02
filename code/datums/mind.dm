@@ -105,6 +105,8 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	var/late_joiner = FALSE
 	/// time of the last death of the mob this mind controlled
 	var/last_death = 0
+	/// Has the resurrection rune already revived this mind?
+	var/rune_revive_used = FALSE
 
 	var/force_escaped = FALSE  // Set by Into The Sunset command of the shuttle manipulator
 
