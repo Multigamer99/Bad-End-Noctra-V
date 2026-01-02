@@ -3888,6 +3888,7 @@
 #include "modular_rmh\code\game\objects\structures\woodcutter.dm"
 #include "modular_rmh\code\game\turfs\open\floor\azure_floors.dm"
 #include "modular_rmh\code\game\turfs\open\floor\desertfloor.dm"
+#include "modular_rmh\code\game\turfs\open\floor\snowyfloors.dm"
 #include "modular_rmh\code\modules\client\customizers\organ\horns.dm"
 #include "modular_rmh\code\modules\clothing\control_collar.dm"
 #include "modular_rmh\code\modules\clothing\control_ring.dm"

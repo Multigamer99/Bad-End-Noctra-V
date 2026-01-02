@@ -92,8 +92,6 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/grassland.wav'
-	smoothing_flags = SMOOTH_BITMASK_CARDINALS
-	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR
 
 /turf/closed/indestructible/rock
 	name = "granite"

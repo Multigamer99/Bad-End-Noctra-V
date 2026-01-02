@@ -186,10 +186,8 @@
 	name = "indoors"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "indoors"
-	background_track = 'modular_rmh/sound/music/area/town_day.ogg'
-	background_track_dawn = 'modular_rmh/sound/music/area/town_dawn.ogg'
-	background_track_dusk = 'modular_rmh/sound/music/area/town_dusk.ogg'
-	background_track_night = 'modular_rmh/sound/music/area/town_night.ogg'
+	background_track = 'modular_rmh/sound/music/area/townindoor_day.ogg'
+	background_track_dawn = 'modular_rmh/sound/music/area/townindoor_dawn.ogg'
 	converted_type = /area/outdoors/exposed/town/rmh
 	//deathsight_message = "the town of Rivermist Hollow and all its bustling souls"
 
@@ -201,6 +199,16 @@
 	background_track_dawn = 'modular_rmh/sound/music/area/town_dawn.ogg'
 	background_track_dusk = 'modular_rmh/sound/music/area/town_dusk.ogg'
 	background_track_night = 'modular_rmh/sound/music/area/town_night.ogg'
+
+/area/outdoors/town/rmh
+	name = "Rivermist Hollow outdoors"
+	icon_state = "town"
+	first_time_text = "RIVERMIST HOLLOW"
+	background_track = 'modular_rmh/sound/music/area/town_day.ogg'
+	background_track_dawn = 'modular_rmh/sound/music/area/town_dawn.ogg'
+	background_track_dusk = 'modular_rmh/sound/music/area/town_dusk.ogg'
+	background_track_night = 'modular_rmh/sound/music/area/town_night.ogg'
+	converted_type = /area/indoors/shelter/town/rmh
 
 /area/outdoors/town/rmh/roofs
 	name = "Rivermist Hollow Rooftops"
@@ -216,13 +224,15 @@
 	soundenv = 17
 	converted_type = /area/indoors/shelter/town/rmh/roofs
 
+/area/indoors/shelter/town/rmh
+	name = "Rivermist Hollow Shelter Indoors"
+	icon_state = "town"
+	background_track = 'modular_rmh/sound/music/area/townindoor_day.ogg'
+	background_track_dawn = 'modular_rmh/sound/music/area/townindoor_dawn.ogg'
+
 /area/indoors/shelter/town/rmh/roofs
-	name = "Rivermist Hollow Rooftops"
+	name = "Rivermist Hollow Shelter Rooftops"
 	icon_state = "roofs"
-	background_track = 'modular_rmh/sound/music/area/town_day.ogg'
-	background_track_dawn = 'modular_rmh/sound/music/area/town_dawn.ogg'
-	background_track_dusk = 'modular_rmh/sound/music/area/town_dusk.ogg'
-	background_track_night = 'modular_rmh/sound/music/area/town_night.ogg'
 
 /area/under/town/rmh/basement
 	name = "basement"

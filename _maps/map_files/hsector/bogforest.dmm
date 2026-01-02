@@ -9,9 +9,7 @@
 /area/outdoors/bog/rmh/north)
 "ac" = (
 /obj/structure/vine,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "ad" = (
 /obj/structure/rack,
@@ -28,9 +26,7 @@
 /turf/open/floor/sand,
 /area/indoors/cave/rmh_cave/wet/mindflayer)
 "aj" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "ap" = (
 /obj/structure/flora/newleaf/corner{
@@ -139,9 +135,7 @@
 	})
 "bb" = (
 /obj/structure/chair/bench/ancientlog,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "bc" = (
 /obj/structure/fluff/railing/wood/west,
@@ -252,9 +246,7 @@
 /obj/structure/flora/tree/pine/dead{
 	icon_state = "dead2"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "cd" = (
 /turf/closed/wall/mineral/wooddark/end{
@@ -378,9 +370,7 @@
 	icon_state = "dead3";
 	pixel_x = -7
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "de" = (
 /obj/structure/door/iron/bars{
@@ -592,9 +582,7 @@
 	})
 "eN" = (
 /obj/structure/statue/bone/rib,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "eO" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -608,9 +596,7 @@
 "eS" = (
 /obj/structure/flora/newtree,
 /obj/structure/vine,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "eT" = (
 /obj/structure/bridge_stakes,
@@ -619,9 +605,7 @@
 	name = "Tree House"
 	})
 "eV" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/travel/swamp_to_main)
 "eW" = (
 /obj/structure/bars/steel,
@@ -656,9 +640,7 @@
 /area/outdoors/rmh_air)
 "ft" = (
 /mob/living/simple_animal/hostile/retaliate/gaseousform,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "fy" = (
 /obj/item/natural/stone,
@@ -679,9 +661,7 @@
 /area/under/rmh_bedrock)
 "fI" = (
 /obj/structure/flora/newtree,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "fL" = (
 /obj/structure/fluff/walldeco/vinez,
@@ -703,9 +683,7 @@
 /area/indoors/dungeon)
 "fX" = (
 /obj/structure/flora/grass/bush/wall/tundra,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "ga" = (
 /turf/closed/wall/mineral/wooddark/horizontal,
@@ -744,9 +722,7 @@
 /turf/open/water/swamp/deep,
 /area/under/cavewet/rmh/swamp_caves)
 "gL" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/woods/rmh)
 "gM" = (
 /turf/closed/wall/mineral/wooddark/window,
@@ -766,9 +742,7 @@
 /area/outdoors/bog/rmh/north)
 "gP" = (
 /obj/structure/flora/tree/burnt,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "gQ" = (
 /obj/structure/stairs,
@@ -832,9 +806,7 @@
 	})
 "hu" = (
 /obj/structure/flora/grass/water/reeds,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "hw" = (
 /obj/structure/flora/tree/pine/dead{
@@ -1044,14 +1016,10 @@
 "iV" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/map_spawner/loot/decrepit_equipment_spawner,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "iW" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/under/cavewet/rmh/swamp_caves)
 "iX" = (
 /obj/item/natural/rock/random,
@@ -1065,9 +1033,7 @@
 /area/outdoors/woods/rmh/goblincampfire)
 "jf" = (
 /obj/structure/statue/bone/skull,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "jh" = (
 /obj/effect/landmark/mapGenerator/cave{
@@ -1110,9 +1076,7 @@
 /area/outdoors/bog/rmh/north)
 "jx" = (
 /obj/structure/flora/grass/bush_meagre,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "jz" = (
 /turf/open/transparent/openspace,
@@ -1238,9 +1202,7 @@
 /area/indoors/shelter/bog)
 "kt" = (
 /obj/structure/flora/tree/burnt,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/travel/swamp_to_main)
 "kA" = (
 /turf/open/floor/naturalstone,
@@ -1263,9 +1225,7 @@
 "kG" = (
 /obj/structure/flora/grass,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "kH" = (
 /obj/structure/fluff/walldeco/vinez,
@@ -1310,9 +1270,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "kU" = (
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "kV" = (
 /obj/structure/chair/stool,
@@ -1411,9 +1369,7 @@
 /area/indoors/dungeon)
 "lL" = (
 /obj/structure/flora/tree/pine/dead,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "lM" = (
 /turf/open/floor/cobblerock,
@@ -1432,9 +1388,7 @@
 "lT" = (
 /obj/structure/flora/tree/burnt,
 /obj/structure/flora/grass/water/reeds,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "lX" = (
 /turf/open/floor/dirt,
@@ -1460,9 +1414,7 @@
 "mf" = (
 /obj/structure/flora/grass,
 /obj/structure/flora/grass/bush_meagre,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "mg" = (
 /obj/effect/decal/cobbleedge{
@@ -1557,9 +1509,7 @@
 /area/outdoors/woods/rmh)
 "nf" = (
 /obj/structure/fluff/walldeco/vinez,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "nh" = (
 /obj/effect/decal/cobblerockedge{
@@ -1826,9 +1776,7 @@
 "oY" = (
 /obj/structure/vine,
 /obj/structure/fluff/walldeco/vinez,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "oZ" = (
 /obj/effect/decal/cobbleedge{
@@ -1849,9 +1797,7 @@
 /area/indoors/dungeon)
 "pk" = (
 /obj/structure/flora/tree/pine/dead,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "pl" = (
 /obj/effect/decal/cleanable/debris/stone,
@@ -1945,9 +1891,7 @@
 /area/outdoors/bog/rmh/north)
 "pW" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "pY" = (
 /obj/effect/landmark/mapGenerator/rmh_bog,
@@ -2038,9 +1982,7 @@
 /mob/living/simple_animal/hostile/retaliate/bogbug{
 	dir = 2
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "qB" = (
 /turf/open/floor/cobblerock/alt,
@@ -2157,9 +2099,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "ry" = (
 /obj/structure/flora/grass/water/reeds,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "rz" = (
 /turf/open/floor/cobblerock,
@@ -2344,9 +2284,7 @@
 /area/under/town/basement)
 "tl" = (
 /obj/effect/decal/remains/wolf,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "tq" = (
 /obj/structure/flora/grass/water/reeds,
@@ -2542,9 +2480,7 @@
 /area/outdoors/woods/rmh)
 "vd" = (
 /obj/structure/flora/grass/water/reeds,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "ve" = (
 /obj/structure/vine,
@@ -2718,9 +2654,7 @@
 /obj/structure/flora/tree/pine{
 	icon_state = "pine4"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "we" = (
 /turf/closed/wall/mineral/wooddark/horizontal,
@@ -2749,9 +2683,7 @@
 /obj/structure/flora/tree/pine/dead{
 	icon_state = "dead3"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "wk" = (
 /obj/structure/flora/tree/burnt,
@@ -2761,9 +2693,7 @@
 /obj/structure/flora/tree/pine{
 	icon_state = "pine3"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "wr" = (
 /obj/structure/flora/newleaf,
@@ -2788,9 +2718,7 @@
 /area/outdoors/bog/rmh/north)
 "wv" = (
 /obj/structure/flora/tree,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "wA" = (
 /obj/structure/vine,
@@ -2939,9 +2867,7 @@
 /area/outdoors/rmh_air)
 "yk" = (
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "yn" = (
 /obj/structure/curtain/bounty,
@@ -3001,9 +2927,7 @@
 /area/outdoors/bog/rmh/south)
 "yI" = (
 /obj/structure/flora/tree/burnt,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "yJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3020,9 +2944,7 @@
 /turf/closed/wall/mineral/wood,
 /area/indoors/dungeon)
 "yQ" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "yT" = (
 /turf/closed/mineral/bedrock{
@@ -3086,9 +3008,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "zA" = (
 /obj/structure/flora/grass/thorn_bush,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "zG" = (
 /obj/item/natural/rock/random,
@@ -3104,9 +3024,7 @@
 	},
 /obj/structure/flora/grass,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "zJ" = (
 /obj/structure/ladder,
@@ -3272,9 +3190,7 @@
 /area/outdoors)
 "Bb" = (
 /obj/structure/flora/newtree,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Bc" = (
 /turf/open/floor/twig,
@@ -3292,9 +3208,7 @@
 	icon_state = "dead2"
 	},
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "Bp" = (
 /turf/open/floor/naturalstone,
@@ -3394,9 +3308,7 @@
 "Cw" = (
 /obj/structure/flora/tree/burnt,
 /obj/structure/flora/grass/water/reeds,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "Cx" = (
 /obj/effect/decal/remains/wolf,
@@ -3408,9 +3320,7 @@
 /area/outdoors/woods/rmh)
 "CC" = (
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/woods/rmh)
 "CD" = (
 /obj/structure/fluff/walldeco/vinez,
@@ -3473,9 +3383,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "Dj" = (
 /obj/structure/flora/tree/burnt,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "Dl" = (
 /turf/open/floor/dirt/road,
@@ -3720,9 +3628,7 @@
 /turf/open/floor/dirt,
 /area/outdoors)
 "Fd" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/bog/rmh/south)
 "Ff" = (
 /turf/closed/wall/mineral/wooddark/slitted,
@@ -3762,9 +3668,7 @@
 "FG" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/map_spawner/loot/medium,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "FI" = (
 /obj/structure/flora/grass/water/reeds,
@@ -3797,9 +3701,7 @@
 /turf/open/floor/dirt/road,
 /area/outdoors/bog/rmh/north)
 "FV" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/bog/rmh/travel/forest_to_main)
 "Gb" = (
 /obj/effect/wisp/prestidigitation{
@@ -3993,15 +3895,11 @@
 	},
 /area/outdoors/rmh_air)
 "GW" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "GZ" = (
 /obj/structure/train/far_travel,
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/woods/rmh)
 "Hb" = (
 /obj/structure/flora/newleaf,
@@ -4018,9 +3916,7 @@
 /obj/structure/flora/tree/pine/dead{
 	icon_state = "dead2"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "Hi" = (
 /obj/structure/kneestingers,
@@ -4074,9 +3970,7 @@
 /area/outdoors/woods/rmh)
 "HK" = (
 /obj/structure/fluff/walldeco/skullspike,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "HL" = (
 /turf/open/floor/grass/red,
@@ -4147,9 +4041,7 @@
 /area/indoors)
 "Io" = (
 /obj/structure/flora/hotspring_rocks/grassy,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Ip" = (
 /obj/structure/fluff/walldeco/vinez,
@@ -4158,9 +4050,7 @@
 "Iv" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/map_spawner/loot/medium,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Iw" = (
 /obj/structure/stairs/stone{
@@ -4183,9 +4073,7 @@
 	name = "Tree House"
 	})
 "IC" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/under/rmh_bedrock)
 "ID" = (
 /obj/structure/bars/tough{
@@ -4225,17 +4113,13 @@
 /obj/structure/flora/tree/pine/dead{
 	icon_state = "dead3"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "IN" = (
 /obj/structure/statue/bone/rib{
 	dir = 8
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "IP" = (
 /turf/open/floor/cobble/mossy,
@@ -4274,9 +4158,7 @@
 	icon_state = "dead3"
 	},
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "Ji" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -4305,9 +4187,7 @@
 	name = "Will-o'-the-wisp";
 	desc = "A small, fiery ball of light made up of mystical energy."
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Jv" = (
 /obj/item/natural/stone,
@@ -4331,9 +4211,7 @@
 	icon_state = "dead3";
 	pixel_x = -7
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "JE" = (
 /obj/machinery/anvil/crafted,
@@ -4343,9 +4221,7 @@
 	name = "oldruins"
 	})
 "JF" = (
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "JG" = (
 /obj/effect/decal/cobblerockedge{
@@ -4393,17 +4269,13 @@
 /obj/structure/flora/tree/pine{
 	icon_state = "pine2"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Kb" = (
 /obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "Kc" = (
 /obj/structure/flora/grass/thorn_bush,
@@ -4484,9 +4356,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "KP" = (
 /obj/structure/flora/newtree/scorched,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "KQ" = (
 /obj/structure/flora/grass/thorn_bush,
@@ -4622,9 +4492,7 @@
 	aportalgoesto = "mainmapforest";
 	aportalid = "mapforest"
 	},
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatchy_grass"
-	},
+/turf/open/floor/dirt/road/snowy,
 /area/outdoors/bog/rmh/travel/forest_to_main)
 "LW" = (
 /obj/structure/flora/grass/bush,
@@ -4713,9 +4581,7 @@
 /area/indoors/shelter/rtfield)
 "MD" = (
 /obj/structure/flora/newtree/scorched,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "ME" = (
 /obj/structure/vine,
@@ -4755,9 +4621,7 @@
 /area/outdoors/rmh_air)
 "MO" = (
 /obj/structure/flora/grass/thorn_bush,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "MQ" = (
 /obj/structure/fluff/walldeco/chains{
@@ -4770,9 +4634,7 @@
 	})
 "MR" = (
 /obj/structure/chair/bench/ancientlog,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "MT" = (
 /obj/effect/decal/cobbleedge/alt{
@@ -4868,9 +4730,7 @@
 /area/outdoors/rmh_air)
 "NH" = (
 /obj/structure/vine,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "NI" = (
 /obj/structure/door/weak/bolt{
@@ -4983,9 +4843,7 @@
 "OG" = (
 /obj/structure/flora/grass/water/reeds,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "OK" = (
 /turf/open/transparent/openspace,
@@ -5040,9 +4898,7 @@
 "Pd" = (
 /obj/structure/flora/tree/burnt,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "Pe" = (
 /turf/open/transparent/openspace,
@@ -5130,9 +4986,7 @@
 /area/outdoors/rmh_air)
 "PI" = (
 /obj/structure/fluff/walldeco/skullspike,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "PJ" = (
 /obj/structure/vine,
@@ -5275,9 +5129,7 @@
 /area/outdoors/woods/rmh)
 "QQ" = (
 /obj/structure/flora/tree/dead_bush,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "QR" = (
 /obj/structure/flora/grass/swampweed,
@@ -5289,9 +5141,7 @@
 /area/outdoors/rmh_air)
 "QT" = (
 /obj/item/natural/rock,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "QU" = (
 /obj/structure/fluff/railing/wood/east,
@@ -5324,9 +5174,7 @@
 "Re" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/map_spawner/loot/decrepit_equipment_spawner,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Rf" = (
 /obj/structure/vine,
@@ -5428,9 +5276,7 @@
 /area/outdoors/woods/rmh)
 "RP" = (
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Sb" = (
 /obj/structure/closet/crate/chest/neu_iron,
@@ -5544,9 +5390,7 @@
 /area/under/cavewet/rmh/swamp_caves)
 "Tj" = (
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "Tk" = (
 /obj/structure/flora/tree/pine/dead{
@@ -5584,9 +5428,7 @@
 "TD" = (
 /obj/structure/flora/tree/burnt,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "TE" = (
 /obj/effect/decal/remains/wolf,
@@ -5861,9 +5703,7 @@
 	})
 "VG" = (
 /obj/structure/flora/tree,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/woods/rmh)
 "VI" = (
 /obj/structure/flora/grass/water,
@@ -5906,9 +5746,7 @@
 "VV" = (
 /obj/structure/statue/bone/skull,
 /obj/structure/flora/grass,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors)
 "VW" = (
 /turf/open/water/swamp/deep,
@@ -6006,9 +5844,7 @@
 "WT" = (
 /obj/structure/flora/grass,
 /obj/structure/flora/tree,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "WU" = (
 /obj/effect/landmark/mapGenerator/cave{
@@ -6116,9 +5952,7 @@
 /obj/structure/vine{
 	icon_state = "Light2d"
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "XL" = (
 /obj/machinery/tanningrack,
@@ -6145,9 +5979,7 @@
 /area/indoors/shelter/bog/rmh/fort)
 "XY" = (
 /obj/structure/flora/tree/dying_bush,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "Ye" = (
 /obj/structure/vine,
@@ -6158,9 +5990,7 @@
 /area/indoors/cave/rmh_cave/wet/mindflayer)
 "Yj" = (
 /obj/item/grown/log/tree/stick,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "Yn" = (
 /obj/item/natural/rock/random_ore,
@@ -6172,9 +6002,7 @@
 "Yq" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/map_spawner/loot/medium,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "Yr" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6194,9 +6022,7 @@
 /area/outdoors/bog/rmh/south)
 "YA" = (
 /obj/structure/flora/tree/pine/dead,
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/north)
 "YB" = (
 /obj/effect/decal/cobblerockedge{
@@ -6368,9 +6194,7 @@
 /mob/living/simple_animal/hostile/retaliate/bogbug{
 	dir = 2
 	},
-/turf/open/floor/dirt{
-	icon_state = "snow"
-	},
+/turf/open/floor/dirt/snowy,
 /area/outdoors/bog/rmh/south)
 "ZT" = (
 /obj/structure/ladder/unbreakable,

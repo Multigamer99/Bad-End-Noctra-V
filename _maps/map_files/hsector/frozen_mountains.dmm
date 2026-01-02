@@ -2429,8 +2429,7 @@
 /area/indoors/town/manor)
 "kG" = (
 /obj/structure/flora/grass/both,
-/turf/open/floor/dirt/road{
-	icon_state = "snowpath";
+/turf/open/floor/dirt/road/snowy/path{
 	dir = 4
 	},
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -4367,8 +4366,7 @@
 /turf/open/floor/tile/bath,
 /area/indoors/town/bath)
 "to" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpathcorner";
+/turf/open/floor/dirt/road/snowy/corner{
 	dir = 4
 	},
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -5730,8 +5728,7 @@
 /turf/closed/wall/mineral/craftstone,
 /area/outdoors/exposed/rmh_dwarf_keep)
 "zg" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpath";
+/turf/open/floor/dirt/road/snowy/path{
 	dir = 4
 	},
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -6997,8 +6994,7 @@
 /turf/open/floor/church,
 /area/under/town/basement/keep)
 "Fj" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpathcorner";
+/turf/open/floor/dirt/road/snowy/corner{
 	dir = 8
 	},
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -7142,8 +7138,7 @@
 /turf/open/floor/volcanic,
 /area/outdoors/exposed/rmh_dwarf_keep)
 "Gb" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpathcorner";
+/turf/open/floor/dirt/road/snowy/corner{
 	dir = 1
 	},
 /area/outdoors/mountains/rmh_mountains/frozen)
@@ -9616,9 +9611,7 @@
 /turf/closed/wall/mineral/stonebrick,
 /area/under/town/basement/keep)
 "QD" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpath"
-	},
+/turf/open/floor/dirt/road/snowy/path,
 /area/outdoors/mountains/rmh_mountains/frozen)
 "QE" = (
 /turf/open/floor/herringbone,
@@ -9927,9 +9920,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/outdoors/mountains/rmh_mountains/frozen/forsaken_village)
 "Sg" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpatht"
-	},
+/turf/open/floor/dirt/road/snowy/snowpatht,
 /area/outdoors/mountains/rmh_mountains/frozen)
 "Sh" = (
 /obj/structure/rack,
@@ -10811,9 +10802,7 @@
 /turf/open/floor/herringbone,
 /area/outdoors/exposed/rmh_dwarf_keep)
 "Wb" = (
-/turf/open/floor/dirt/road{
-	icon_state = "snowpathcorner"
-	},
+/turf/open/floor/dirt/road/snowy/corner,
 /area/outdoors/mountains/rmh_mountains/frozen)
 "Wd" = (
 /obj/structure/door/fancy{
