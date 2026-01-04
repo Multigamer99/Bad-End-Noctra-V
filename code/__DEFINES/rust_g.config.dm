@@ -2,4 +2,4 @@
 #undef RUST_G
 #endif
 
-#define RUST_G "./librust_g.so"
+#define RUST_G "/home/tgs/.byond/bin/librust_g.so"
