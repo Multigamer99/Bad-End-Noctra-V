@@ -224,10 +224,14 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/datum/loadout_item/loadout1
 	var/datum/loadout_item/loadout2
 	var/datum/loadout_item/loadout3
+	var/datum/loadout_item/loadout4
+	var/datum/loadout_item/loadout5
 
 	var/loadout_1_hex
 	var/loadout_2_hex
 	var/loadout_3_hex
+	var/loadout_4_hex
+	var/loadout_5_hex
 
 	var/list/preference_message_list = list()
 
