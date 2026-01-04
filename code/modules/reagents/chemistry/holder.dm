@@ -927,7 +927,8 @@
 	for(var/datum/reagent/R as anything in reagent_list)
 		R.on_temp_change(increased)
 	handle_reactions()
-	SEND_SIGNAL(my_atom, COMSIG_REAGENTS_EXPOSE_TEMPERATURE, null, chem_temp)
+	if(my_atom && !QDELETED(my_atom))
+		SEND_SIGNAL(my_atom, COMSIG_REAGENTS_EXPOSE_TEMPERATURE, null, chem_temp)
 
 /**
  * Multiplies reagents inside this holder by a specific amount
