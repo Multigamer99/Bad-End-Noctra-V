@@ -39,14 +39,6 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 	name = "Natural Wooden Cane"
 	item_path = /obj/item/weapon/mace/cane/natural
 
-/datum/loadout_item/lamptern
-	name = "Lamptern"
-	item_path = /obj/item/flashlight/flare/torch/lantern
-
-/datum/loadout_item/waterskin
-	name = "Waterskin"
-	item_path = /obj/item/reagent_containers/glass/bottle/waterskin
-
 //HATS
 /datum/loadout_item/zalad
 	name = "Keffiyeh"
@@ -134,10 +126,6 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 	name = "Cloth Vest"
 	item_path = /obj/item/clothing/shirt/clothvest/colored/random
 
-/datum/loadout_item/tanned_jacket
-	name = "Tanned Jacket"
-	item_path = /obj/item/clothing/armor/leather/jacket
-
 //SHOES
 
 /datum/loadout_item/babouche
@@ -156,10 +144,6 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 	name = "Cloth Anklets"
 	item_path = /obj/item/clothing/shoes/boots/clothlinedanklets
 
-/datum/loadout_item/shoes
-	name = "Simple Shoes"
-	item_path = /obj/item/clothing/shoes/simpleshoes
-
 //SHIRTS
 
 /datum/loadout_item/robe
@@ -168,7 +152,7 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 
 /datum/loadout_item/longshirt
 	name = "Shirt"
-	item_path = /obj/item/clothing/shirt/undershirt
+	item_path = /obj/item/clothing/shirt
 
 /datum/loadout_item/shortshirt
 	name = "Short-sleeved Shirt"
@@ -210,11 +194,6 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 /datum/loadout_item/skirt
 	name = "Skirt"
 	item_path = /obj/item/clothing/pants/skirt
-
-/datum/loadout_item/trou
-	name = "Work Trousers"
-	item_path = /obj/item/clothing/pants/trou
-
 
 //ACCESSORIES
 
@@ -277,15 +256,6 @@ GLOBAL_LIST_INIT(loadout_items, subtypesof(/datum/loadout_item))
 /datum/loadout_item/cowbell
 	name = "Cowbell"
 	item_path = /obj/item/catbell/cow
-
-/datum/loadout_item/rag_mask
-	name = "Rag Mask"
-	item_path = /obj/item/clothing/face/shepherd/rag
-
-/datum/loadout_item/bagpack
-	name = "Rucksack"
-	item_path =/obj/item/storage/backpack/backpack/bagpack
-
 //ARMOR
 /datum/loadout_item/bellyriding_harness
 	name = "Bellyriding Harness"
