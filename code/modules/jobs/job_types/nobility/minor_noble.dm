@@ -38,10 +38,6 @@
 		/datum/skill/combat/bows = 2
 	)
 
-	traits = list(
-		TRAIT_NOBLE
-	)
-
 /datum/job/minor_noble/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(spawned.gender == FEMALE)
