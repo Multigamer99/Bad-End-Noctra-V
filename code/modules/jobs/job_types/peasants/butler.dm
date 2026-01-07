@@ -57,6 +57,7 @@
 		TRAIT_NOPAINSTUN,
 		TRAIT_HARDDISMEMBER,
 		TRAIT_EMPATH,
+		TRAIT_INDENTURED,
 	)
 
 /datum/job/butler/after_spawn(mob/living/carbon/human/spawned, client/player_client)
@@ -111,7 +112,7 @@
 /datum/outfit/butler
 	name = "Butler"
 	shoes = /obj/item/clothing/shoes/nobleboot
-	beltr = /obj/item/storage/keyring/butler
+	beltr = /obj/item/storage/keyring/captain
 	beltl = /obj/item/storage/belt/pouch/coins/mid
 	backr = /obj/item/storage/backpack/satchel
 
